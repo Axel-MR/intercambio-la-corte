@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --background: #ffffff;
@@ -18,4 +20,106 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --font-size-default: 18px; /* Ajusta el tamaño de fuente base */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-size-default);
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.slick-slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* styles.css */
+
+.page-container {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1s forwards;
+}
+
+.page-container-2 {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 1.5s forwards;
+}
+
+.page-container-3 {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: slideIn 1s forwards;
+}
+
+.page-container-4 {
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: slideIn 1.5s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Define la transición para la imagen */
+.logo, .logo-zoom {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Imagen normal */
+.logo {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Imagen cuando se hace clic y se realiza zoom */
+.logo-zoom {
+  transform: scale(1.4); /* Realiza un zoom más grande */
+  opacity: 0.9; /* Reduce un poco la opacidad */
+}
+
+/* Imagen cuando se hace clic */
+.logo-clicked {
+  transform: scale(1.2); /* Aumenta el tamaño cuando se hace clic */
+  opacity: 0.8; /* Reduce ligeramente la opacidad cuando se hace clic */
+}
+
+
+.text-shadow {
+  color: black; /* Texto negro */
+  text-shadow: 0 0 10px white, 0 0 15px white, 0 0 20px white; /* Contorno blanco */
+}
+
+/* En tu archivo CSS o archivo de configuración de Tailwind */
+.custom-logo-size {
+  width: 450px;
+  height: 450px;
+}
+
+.custom-top-position {
+  top: -9rem; /* Ajusta el valor según lo que necesites */
 }
